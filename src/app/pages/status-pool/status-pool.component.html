@@ -1,0 +1,19 @@
+<div class="form-area">
+  <app-title-bar [title]="'Status da Enquete'"></app-title-bar>
+  <div class="total-area">
+    <H2>Total De Viaualizações {{views}} </H2>
+  </div>
+  <div class="votes-area" *ngFor="let option of votes; let i = index;">
+    <h3>Opção {{i+1}} "{{getOptionDescription(option.option_id)}}" : {{option.qty}} Votes</h3>
+  </div>
+</div>
+
+<app-modal #modal [title]="'Este é o link para a votação'" [width]="955">
+  <div>
+    <img src="../../../assets/whatsapp.png" alt="">
+    <a href="https://api.whatsapp.com/send?text={{vote_link}}" target="_blank">Compartilhar pelo watsapp</a>
+  </div>
+  <div>
+    <a href="{{vote_link}}" target="_blank">Link para votar: {{vote_link}} </a>
+  </div>
+</app-modal>

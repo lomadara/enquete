@@ -1,0 +1,17 @@
+<div class="form-area">
+  <app-title-bar [title]="'Vote em uma opção'"></app-title-bar>
+  <form [formGroup]="form">
+    <div class="title-area">
+      <h2>{{poll_description}}</h2>
+    </div>
+    <div *ngFor="let option of options">
+      <label>
+        <input type="checkbox" (change)="selectOption(option.option_id)" [value]="option.option_id" [checked]="optionSelected == option.option_id">
+        {{option.option_description}}
+      </label>
+    </div>
+    <div class="actions-area">
+      <button class="send" (click)="votePoll()" title="Votar">Votar</button>
+    </div>
+  </form>
+</div>

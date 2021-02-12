@@ -1,0 +1,26 @@
+<div class="form-area">
+  <app-title-bar [title]="'Criador de Enquetes'"></app-title-bar>
+  <form [formGroup]="form">
+    <div class="description">
+      <input type="text" formControlName="poll_description" placeholder="Descrição..." maxlength="255">
+    </div>
+
+    <div class="actions-area">
+      <button class="add" (click)="createNewQuestion()">+ Adicionar Opção</button>
+      <button *ngIf="options.controls.length > 1" class="send" (click)="send()" title="Criar Enquete">Criar</button>
+    </div>
+    
+    <div *ngFor="let pollOption of options.controls; let i = index;">
+      <div class="option" [formGroup]="pollOption">
+        <div>
+          <input *ngIf="pollOption.controls.edit.value" placeholder="Opção..." type="text" formControlName="option" maxlength="150">
+          <p *ngIf="!pollOption.controls.edit.value">{{pollOption.controls.option.value}}</p>
+        </div>
+        <div>
+          <button class="remove" (click)="deleteQuestion(i)" title="Remover Opção"></button>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>

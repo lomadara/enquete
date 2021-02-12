@@ -1,0 +1,80 @@
+.form-area form .option button {
+    height: 40px;
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+}
+
+.form-area form .option button:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.form-area .description input {
+    margin-left: 10%;
+    margin-top: 50px;
+    width: 80%;
+}
+
+input {
+    height: 40px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(212, 212, 212);
+    transition: 0.3s;
+}
+
+input:hover {
+    border-bottom: 2px solid rgba(255,119,0,.9);
+}
+
+.form-area .option {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.form-area .option input{
+    width: 80%;
+}
+
+.form-area p {
+    font-size: 20px;
+    padding-top: 7px;
+}
+
+.actions-area {
+    width: 100%;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.actions-area button {
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    color: white;
+    outline: none;
+    margin: 5px;
+}
+
+.option {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.send {
+    background-color: rgb(0 184 90);
+}
+
+.add {
+    background-color: rgb(255 131 23);
+}
+
+.remove {
+    background-image: url(../../../assets/remove.png);
+}
